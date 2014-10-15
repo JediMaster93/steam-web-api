@@ -2,13 +2,9 @@
 	"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-		<title></title>
+		<title>Steam API</title>
 	</head>
 	<body>
-		<?php
-			echo "hello orld";
-
-		?>
 		<form name = "input" method = "post" action = "action.php">
 			<p>Insert steam ID here <input  type = "text" name = "steamID"></input> </p>
 			<input type = "submit" value = "Submit"></input>
