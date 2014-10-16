@@ -39,9 +39,10 @@
 
 
 				$url = $apiReq . $ID;
+				$time1 = time();
 				$jsoncontent = file_get_contents($url, false, $context);
 				$json = json_decode($jsoncontent, true);
-				
+				echo  "second request sec : " . (time() - $time1);
 				//playersummaries
 				$nickname = $json['response']['players'][0]['personaname'];
 				$avatar = $json['response']['players'][0]['avatarfull'];
@@ -50,7 +51,9 @@
 				
 				//games
 				$url = $apiGames . $ID;
+				$time1 = time();
 				$jsoncontent = file_get_contents($url, false, $context);
+				echo "thir req sec : " . (time() - $time1);
 				$json = json_decode($jsoncontent, true);
 				
 				$ownedgamescount = $json['response']['game_count'];
@@ -79,10 +82,11 @@
 				$context = stream_context_create(array('http' => array('header'=>'Connection: close\r\n')));
 				//file_get_contents("http://www.something.com/somepage.html",false,$context);
 
-				
+				$time1 = time();
 				$jsonContent = file_get_contents($apiUrl, false, $context);
 				$json = json_decode($jsonContent, true);
 				$json = $json['response'];
+				echo  "first request sec: " . (time() - $time1);
 				
 				if($json['success'] == 1)
 				{
