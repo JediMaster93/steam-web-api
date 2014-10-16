@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<form name = "input" method = "post" action = "action.php">
-			<p>Insert steam ID here <input  type = "text" name = "steamID"></input> </p>
+			<p>Enter steam user name  <input  type = "text" name = "steamID"></input> </p>
 			<input type = "submit" value = "Submit"></input>
 		</form>
 	</body>
